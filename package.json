@@ -1,0 +1,35 @@
+{
+    "name": "collaborative-suite-monorepo",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Monorepo for Task Manager and Notes applications with a shared backend.",
+    "type": "module",
+    "scripts": {
+      "dev": "concurrently \"pnpm:dev:*\"",
+      "dev:frontend": "pnpm --filter \"./frontend/*\" dev",
+      "dev:api": "pnpm --filter api-server dev",
+      "dev:party": "pnpm --filter partykit-server dev",
+      "build": "pnpm -r --filter \"!partykit-server\" build",
+      "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+      "format": "prettier --write .",
+      "typecheck": "pnpm -r typecheck",
+      "db:generate": "pnpm --filter db exec drizzle-kit generate:pg",
+      "db:migrate": "pnpm --filter db exec drizzle-kit migrate",
+      "db:studio": "pnpm --filter db exec drizzle-kit studio"
+    },
+    "devDependencies": {
+      "@typescript-eslint/eslint-plugin": "^7.13.1",
+      "@typescript-eslint/parser": "^7.13.1",
+      "concurrently": "^8.2.2",
+      "eslint": "^9.30.1",
+      "eslint-config-prettier": "^9.1.0",
+      "eslint-plugin-react-hooks": "^4.6.2",
+      "eslint-plugin-react-refresh": "^0.4.7",
+      "prettier": "^3.3.2",
+      "typescript": "^5.4.5"
+    },
+    "engines": {
+      "node": ">=20.11.1",
+      "pnpm": ">=9.0.0"
+    }
+  }
