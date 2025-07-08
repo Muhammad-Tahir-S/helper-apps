@@ -12,7 +12,7 @@
     "build": "pnpm -r --filter \"!partykit-server\" build",
     "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write .",
-    "typecheck": "pnpm -r typecheck",
+    "typecheck": "pnpm -r --if-present typecheck",
     "db:generate": "pnpm --filter db exec drizzle-kit generate:pg",
     "db:migrate": "pnpm --filter db exec drizzle-kit migrate",
     "db:studio": "pnpm --filter db exec drizzle-kit studio",
@@ -32,6 +32,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
+    "pre-push": "^0.1.4",
     "prettier": "^3.3.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.36.0"
@@ -44,5 +45,8 @@
     "**/*.(ts|tsx|js|jsx)": [
       "eslint --fix"
     ]
-  }
+  },
+  "pre-push": [
+    "pnpm -r run pre-push --max-warnings=0"
+  ]
 }

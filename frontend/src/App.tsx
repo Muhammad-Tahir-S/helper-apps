@@ -6,7 +6,7 @@ import { Button } from "@/shared/components/ui/button";
 import reactLogo from "./shared/assets/react.svg";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<string>(0);
 
   return (
     <>
