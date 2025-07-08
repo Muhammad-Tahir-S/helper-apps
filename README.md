@@ -1,4 +1,4 @@
-# Collaborative Suite Monorepo
+# Helper Apps
 
 This monorepo contains the frontend and backend services for a suite of collaborative applications, including a Task Manager and a Notes app. It's configured with pnpm workspaces, TypeScript, and a full suite of development tools to ensure code quality and consistency.
 
