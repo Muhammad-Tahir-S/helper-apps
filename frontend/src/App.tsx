@@ -1,10 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './shared/assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Button } from '@/shared/components/ui/button'
+import { useState } from "react";
+
+import viteLogo from "/vite.svg";
+import { Button } from "@/shared/components/ui/button";
+
+import reactLogo from "./shared/assets/react.svg";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -12,9 +14,8 @@ function App() {
         <h1 className="text-3xl font-bold underline text-red-500">
           Hello world!
         </h1>
-        
-        <Button variant="outline">Click me</Button>
 
+        <Button variant="outline">Click me</Button>
 
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -36,7 +37,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
