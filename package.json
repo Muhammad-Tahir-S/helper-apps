@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"pnpm:dev:*\"",
-    "dev:frontend": "pnpm --filter \"./frontend/*\" dev",
+    "dev:frontend": "pnpm --filter \"./frontend/**\" dev",
     "dev:api": "pnpm --filter api-server dev",
     "dev:party": "pnpm --filter partykit-server dev",
     "build": "pnpm -r --filter \"!partykit-server\" build",
