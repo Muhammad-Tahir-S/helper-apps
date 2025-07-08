@@ -20,7 +20,7 @@ The repository is organized as follows:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/collaborative-suite-monorepo.git
+    git clone https://github.com/your-username/helper-apps.git
     cd helper-apps
     ```
 
