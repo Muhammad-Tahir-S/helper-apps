@@ -1,5 +1,5 @@
 {
-  "name": "collaborative-suite-monorepo",
+  "name": "helper-apps",
   "version": "1.0.0",
   "private": true,
   "description": "Monorepo for Task Manager and Notes applications with a shared backend.",
