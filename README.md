@@ -116,9 +116,10 @@ This project uses `husky` and `lint-staged` to enforce code quality with a pre-c
 -   **`husky`**: Manages Git hooks.
 -   **`lint-staged`**: Runs linters on staged files.
 
-Before each commit, the hook automatically runs `eslint --fix` on all staged TypeScript and JavaScript files. This has the following consequences:
+Before each commit, the hook automatically runs `eslint --fix` on all staged TypeScript and JavaScript files, and performs a type check on TypeScript files. This has the following consequences:
 
 1.  **Automated Code Formatting**: Your code is automatically formatted and linted before it enters the codebase.
-2.  **Commit Rejection**: If ESLint finds errors that it cannot automatically fix, the commit will be aborted. You must manually fix the errors before you can commit your changes.
+2.  **Type-Safety Checks**: TypeScript files are checked for type errors before they can be committed.
+3.  **Commit Rejection**: If ESLint finds errors that it cannot automatically fix, or if the type-check fails, the commit will be aborted. You must manually fix the errors before you can commit your changes.
 
-This ensures that all code in the repository adheres to the established style guidelines, improving overall code quality and consistency. 
+This ensures that all code in the repository adheres to the established style and type-safety guidelines, improving overall code quality and consistency. 
