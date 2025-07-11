@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import AuthRoutes from "@/Auth";
+import AuthRoutes from "@/shared/auth/auth-routes";
 
 export default function AppRoutes() {
   return (

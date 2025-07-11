@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 
-import AuthLayout from "./components/AuthLayout";
-import CreateAccount from "./components/CreateAccount";
+import AuthLayout from "./components/auth-layout";
+import CreateAccount from "./components/create-account";
 
 export default function AuthRoutes() {
   return (
     <Routes>
       <Route element={<AuthLayout />}>
-        <Route index element={<CreateAccount />} />
+        <Route path="signup" element={<CreateAccount />} />
       </Route>
     </Routes>
   );

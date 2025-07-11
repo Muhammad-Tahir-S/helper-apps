@@ -90,6 +90,89 @@ body {
   --color-accent-soft-bg: #f3e8ff;
   --color-accent-sec-accent: #a78bfa;
   --color-accent-sec-text: #7e22ce;
+
+  --color-success-25: #f3fbf9;
+  --color-success-50: #e7f8f2;
+  --color-success-100: #cff1e6;
+  --color-success-200: #b7ead9;
+  --color-success-300: #87dcc0;
+  --color-success-400: #58cea7;
+  --color-success-main: #10b981;
+  --color-success-600: #0ea774;
+  --color-success-700: #0d9467;
+
+  --color-warning-25: #fefaf3;
+  --color-warning-50: #fef5e7;
+  --color-warning-100: #fdecce;
+  --color-warning-200: #fce2b6;
+  --color-warning-300: #facf85;
+  --color-warning-400: #f8bb54;
+  --color-warning-main: #f59e0b;
+  --color-warning-600: #dd8e0a;
+  --color-warning-700: #c47e09;
+
+  --color-error-25: #fef6f6;
+  --color-error-50: #fdecec;
+  --color-error-100: #fcdada;
+  --color-error-200: #fac7c7;
+  --color-error-300: #f7a1a1;
+  --color-error-400: #f47c7c;
+  --color-error-main: #ef4444;
+  --color-error-hover: #d73d3d;
+  --color-error-pressed: #bf3636;
+
+  --color-info-25: #f3fafe;
+  --color-info-50: #e7f6fd;
+  --color-info-100: #cfedfb;
+  --color-info-200: #b7e4f8;
+  --color-info-300: #87d2f4;
+  --color-info-400: #56c0f0;
+  --color-info-main: #0ea5e9;
+  --color-info-600: #0d95d2;
+  --color-info-700: #0b84ba;
+
+  --color-gray-blue-25: #0b84ba;
+  --color-gray-blue-50: #f8f9fc;
+  --color-gray-blue-100: #eaecf5;
+  --color-gray-blue-200: #d5d9eb;
+  --color-gray-blue-300: #b3b8db;
+  --color-gray-blue-400: #717bbc;
+  --color-gray-blue-500: #4e5ba6;
+  --color-gray-blue-600: #3e4784;
+  --color-gray-blue-700: #363f72;
+  --color-gray-blue-800: #293056;
+  --color-gray-blue-900: #101323;
+  --color-gray-blue-950: #0d0f1c;
+
+  --color-blue-50: #eff8ff;
+  --color-blue-100: #d1e9ff;
+  --color-blue-500: #2e90fa;
+  --color-blue-600: #1570ef;
+
+  --color-fuchsia-50: #fdf4ff;
+  --color-fuchsia-100: #fbe8ff;
+  --color-fuchsia-500: #d444f1;
+  --color-fuchsia-600: #ba24d5;
+
+  --color-green-light-50: #f3fee7;
+  --color-green-light-100: #e3fbcc;
+  --color-green-light-500: #66c61c;
+  --color-green-light-600: #4ba30d;
+
+  --color-pink-50: #fdf2fa;
+  --color-pink-100: #fce7f6;
+  --color-pink-500: #ee46bc;
+  --color-pink-600: #dd2590;
+
+  --color-rose-50: #fff1f3;
+  --color-rose-100: #ffe4e8;
+  --color-rose-500: #f63d68;
+  --color-rose-600: #e31b54;
+
+  --color-yellow-50: #fefbe8;
+  --color-yellow-100: #fef7c3;
+  --color-yellow-500: #eaaa08;
+  --color-yellow-600: #ca8504;
 }
 
 :root {
