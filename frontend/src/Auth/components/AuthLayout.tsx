@@ -8,7 +8,7 @@ export default function AuthLayout() {
       <div className="w-[50%] hidden lg:flex py-[40px] pl-[40px]">
         <img src={AuthImage} alt="Auth" />
       </div>
-      <div className="flex flex-1 flex-col items-center justify-center">
+      <div className="flex flex-1 items-center justify-center">
         <Outlet />
       </div>
     </div>

@@ -5,7 +5,7 @@ import AuthRoutes from "@/Auth";
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/*" element={<AuthRoutes />} />
+      <Route path="auth/*" element={<AuthRoutes />} />
     </Routes>
   );
 }
