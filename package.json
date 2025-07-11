@@ -45,6 +45,7 @@
       "eslint --fix"
     ],
     "**/*.(ts|tsx)": [
-      "bash -c 'pnpm typecheck'"    ]
+      "bash -c 'pnpm typecheck'"
+    ]
   }
 }
