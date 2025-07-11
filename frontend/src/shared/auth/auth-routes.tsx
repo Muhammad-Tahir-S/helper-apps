@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router";
 
 import AuthLayout from "./components/auth-layout";
 import CreateAccount from "./components/create-account";

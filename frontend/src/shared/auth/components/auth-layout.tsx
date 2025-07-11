@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 
 import AuthImage from "@/shared/assets/images/authLayout.jpg";
 

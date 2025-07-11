@@ -1,1 +1,1 @@
-export { default as AppRoutes } from "./components/app-routes";
+export { AppRoutes as default } from "./components/app-routes";
