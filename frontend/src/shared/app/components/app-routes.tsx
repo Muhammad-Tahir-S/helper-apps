@@ -1,10 +1,10 @@
 import { Navigate, Route, Routes } from "react-router";
 import useLocalStorage from "use-local-storage";
 
-import { NotesRoutes } from "@/notes/components/notes-routes";
-import AuthRoutes from "@/shared/auth/auth-routes";
+import NotesRoutes from "@/notes";
+import AuthRoutes from "@/shared/auth";
 import globalKeys from "@/shared/lib/globalKeys";
-import { TasksRoutes } from "@/task-manager/components/tasks-routes";
+import TasksRoutes from "@/task-manager";
 
 export const AppRoutes = () => {
   const [lastVisitedApp] = useLocalStorage(
