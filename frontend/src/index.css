@@ -254,3 +254,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111111;
+  }
+}
