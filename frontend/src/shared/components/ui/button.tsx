@@ -5,32 +5,41 @@ import * as React from "react";
 import { cn } from "@/shared/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none [&_svg]:pointer-events-none  shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive ",
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        primary:
+          "bg-primary-main text-base-light hover:bg-primary-hover focus:bg-primary-pressed disabled:bg-primary-300 dark:disabled:bg-primary-900 dark:disabled:text-gray-500",
+        pryOutline:
+          "text-primary-main border-[2px] border-primary-main hover:border-primary-hover hover:bg-primary-50 hover:text-primary-hover focus:text-primary-pressed focus:bg-transparent focus:border-primary-pressed disabled:border-primary-300 disabled:text-primary-300",
+        grey: "text-gray-500 border-[2px] border-gray-300 hover:text-gray-600 hover:bg-gray-25 focus:text-gray-700 disabled:text-gray-300",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+          "bg-secondary-main text-base-light hover:bg-secondary-600 focus:bg-secondary-700 disabled:bg-secondary-300",
+        error:
+          "bg-error-main text-base-light hover:bg-error-hover focus:bg-error-pressed disabled:bg-error-300",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
+          "text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:text-gray-700 focus:bg-transparent disabled:text-gray-300",
+        errorOutline:
+          "border-[2px] border-error-main text-error-main hover:bg-error-25 hover:text-error-hover hover:border-error-hover focus:text-error-pressed focus:border-error-pressed focus:bg-transparent disabled:border-error-300 disabled:text-error-300 ",
+
+        pryLink:
+          "text-primary-main hover:text-primary-hover focus:text-primary-pressed disabled:text-primary-300 ",
+        successLink:
+          "text-success-main hover:text-success-600 focus:text-success-700 disabled:text-success-300 ",
+        secLink:
+          "text-warning-main hover:text-warning-600 focus:text-warning-700 disabled:text-warning-300 ",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9",
+        md: "h-12 py-3 px-6 [&_svg:not([class*='size-'])]:size-6 text-[16px] font-medium min-w-[164px] rounded-[12px] gap-2",
+        sm: "h-9 text-sm py-2 px-3 font-semibold [&_svg:not([class*='size-'])]:size-5 min-w-[130px] rounded-[6px] gap-2",
+        // lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9 rounded-[8px] [&_svg:not([class*='size-'])]:size-5",
       },
     },
     defaultVariants: {
-      variant: "default",
-      size: "default",
+      variant: "primary",
+      size: "md",
     },
   },
 );
