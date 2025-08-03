@@ -2,8 +2,8 @@ import * as React from "react";
 
 import { cn } from "@/shared/lib/utils";
 
-import CheckCircle from "../../assets/icons/check-circle.svg";
-import RemoveCircle from "../../assets/icons/remove-circle.svg";
+import CheckCircle from "../../assets/icons/check-circle.svg?react";
+import RemoveCircle from "../../assets/icons/remove-circle.svg?react";
 import Typography from "../typography";
 
 interface TextareaProps extends React.ComponentProps<"textarea"> {

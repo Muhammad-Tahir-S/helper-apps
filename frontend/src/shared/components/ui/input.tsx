@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 import * as React from "react";
 
+import CheckCircle from "@/shared/assets/icons/check-circle.svg?react";
+import RemoveCircle from "@/shared/assets/icons/remove-circle.svg?react";
 import { cn } from "@/shared/lib/utils";
 
-import CheckCircle from "../../assets/icons/check-circle.svg";
-import RemoveCircle from "../../assets/icons/remove-circle.svg";
 import Typography from "../typography";
 
 interface InputProps extends React.ComponentProps<"input"> {
