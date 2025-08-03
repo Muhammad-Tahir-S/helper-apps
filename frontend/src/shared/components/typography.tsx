@@ -1,7 +1,8 @@
-import clsx from "clsx";
 import { forwardRef, type HTMLAttributes } from "react";
 
-type Variant =
+import { cn } from "../lib/utils";
+
+type TextSize =
   | "display-2xl"
   | "display-xl"
   | "display-lg"
@@ -17,9 +18,10 @@ type Variant =
 
 type FontWeight = "regular" | "medium" | "semibold" | "bold";
 
+type Variant = `${TextSize}/${FontWeight}`;
+
 type CustomProps = {
   variant?: Variant;
-  fontWeight?: FontWeight;
   color?: string;
   truncate?: boolean;
 };
@@ -33,28 +35,23 @@ interface ParagraphProps
 
 const Typography = forwardRef<HTMLParagraphElement, ParagraphProps>(
   (
-    {
-      className,
-      children,
-      variant = "display-xl",
-      color = "text-primary-900",
-      truncate,
-      fontWeight,
-      ...rest
-    },
+    { className, children, variant = "display-xl/regular", truncate, ...rest },
     ref,
   ) => {
+    const [size, weight] = variant.split("/") as [TextSize, FontWeight];
     return (
       <p
         ref={ref}
-        className={clsx(
-          variantStyleMap[variant],
-          fontWeight ? fontWeightStyleMap[fontWeight] : undefined,
+        className={cn(
+          textSizeStyleMap[size],
+          fontWeightStyleMap[weight],
+          "text-gray-700",
+          "dark:text-primary-50",
+
           {
-            "overflow-hidden text-ellipsis max-w-full whitespace-nowrap":
+            "overflow-hidden text-ellipsis max-w-full whitespace-nowrap ":
               truncate,
           },
-          color,
           className,
         )}
         {...rest}
@@ -68,8 +65,8 @@ Typography.displayName = "Typography";
 
 export default Typography;
 
-const variantStyleMap: { [k in Variant]: string } = {
-  "display-2xl": "text-[72px] leading-[90px]",
+const textSizeStyleMap: { [k in TextSize]: string } = {
+  "display-2xl": "text-[72px] leading-[90px] font-[400]",
   "display-xl": "text-[60px] leading-[72px]",
   "display-lg": "text-[48px] leading-[60px]",
   "display-md": "text-[36px] leading-[44px] ",
