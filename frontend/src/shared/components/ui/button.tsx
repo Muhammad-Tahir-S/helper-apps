@@ -31,8 +31,8 @@ const buttonVariants = cva(
           "text-warning-main hover:text-warning-600 focus:text-warning-700 disabled:text-warning-300 ",
       },
       size: {
-        md: "h-12 py-3 px-6 [&_svg:not([class*='size-'])]:size-6 text-[16px] font-medium min-w-[164px] rounded-[12px] gap-2",
-        sm: "h-9 text-sm py-2 px-3 font-semibold [&_svg:not([class*='size-'])]:size-5 min-w-[130px] rounded-[6px] gap-2",
+        md: "h-12 py-3 px-6 [&_svg:not([class*='size-'])]:size-6 text-[16px] font-medium rounded-[12px] gap-2",
+        sm: "h-9 text-sm py-2 px-3 font-semibold [&_svg:not([class*='size-'])]:size-5 rounded-[6px] gap-2",
         // lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9 rounded-[8px] [&_svg:not([class*='size-'])]:size-5",
       },
