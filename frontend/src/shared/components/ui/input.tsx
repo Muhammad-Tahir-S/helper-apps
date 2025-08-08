@@ -37,12 +37,12 @@ function Input({
             data-slot="input"
             className={cn(
               "peer",
-              "file:text-foreground placeholder:text-gray-400 selection:bg-primary selection:text-primary-foreground dark:bg-gray-850 flex h-13 w-full min-w-0 rounded-md bg-gray-100 px-3 py-1 text-base-dark dark:text-primary-50 shadow-xs transition-[color,box-shadow] outline-none font-medium file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-400  md:text-sm ",
+              "file:text-foreground placeholder:text-gray-400  dark:bg-gray-850 flex h-13 w-full min-w-0 rounded-md bg-gray-100 px-3 py-1 text-base-dark dark:text-primary-50 shadow-xs transition-[color,box-shadow] outline-none font-medium file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-400  md:text-sm ",
 
               " focus:border-primary-400 focus:bg-transparent focus:dark:border-primary-hover focus:border-[2px]",
 
               "aria-invalid:border-error-main aria-invalid:text-error-main dark:aria-invalid:border-error-main dark:aria-invalid:text-error-main ",
-              "[&:not(:focus):not(:placeholder-shown)]:bg-primary-25 dark:[&:not(:focus):not(:placeholder-shown)]:bg-transparent",
+              "[&:not(:focus):not(:placeholder-shown)]:bg-primary-25 dark:[&:not(:focus):not(:placeholder-shown)]:bg-gray-850",
               className,
               leftIcon ? "pr-12" : "",
               rightIcon ? "pl-12" : "",
@@ -64,16 +64,20 @@ function Input({
           </div>
         </div>
       </div>
-      <div className="flex gap-0.5">
-        {isInvalid ? (
-          <RemoveCircle className="fill-error-main w-4 h-4" />
-        ) : (
-          <CheckCircle className="fill-gray-400 w-4 h-4" />
-        )}
-        <Typography variant="text-sm/medium" className="text-gray-500">
-          {helperText}
-        </Typography>
-      </div>
+      {helperText ? (
+        <div className="flex gap-0.5">
+          {isInvalid ? (
+            <RemoveCircle className="fill-error-main w-4 h-4" />
+          ) : (
+            <CheckCircle className="fill-gray-400 w-4 h-4" />
+          )}
+          <Typography variant="text-sm/medium" className="text-gray-500">
+            {helperText}
+          </Typography>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
