@@ -6,6 +6,19 @@ import AuthRoutes from "@/shared/auth";
 import globalKeys from "@/shared/lib/globalKeys";
 import TasksRoutes from "@/task-manager";
 
+import RootLayout from "./root-layout";
+
+function MainRoutes() {
+  return (
+    <RootLayout>
+      <Routes>
+        <Route path="notes/*" element={<NotesRoutes />} />
+        <Route path="tasks/*" element={<TasksRoutes />} />
+      </Routes>
+    </RootLayout>
+  );
+}
+
 export const AppRoutes = () => {
   const [lastVisitedApp] = useLocalStorage(
     globalKeys.lastVisitedApp,
@@ -15,9 +28,10 @@ export const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigate replace to={lastVisitedApp} />} />
+
       <Route path="auth/*" element={<AuthRoutes />} />
-      <Route path="/notes/*" element={<NotesRoutes />} />
-      <Route path="/tasks/*" element={<TasksRoutes />} />
+
+      <Route path="/*" element={<MainRoutes />} />
     </Routes>
   );
 };
