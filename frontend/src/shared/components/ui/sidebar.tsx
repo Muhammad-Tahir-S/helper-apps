@@ -369,7 +369,7 @@ function SidebarSeparator({
     <Separator
       data-slot="sidebar-separator"
       data-sidebar="separator"
-      className={cn("bg-sidebar-border w-auto", className)}
+      className={cn("bg-primary-200 dark:bg-primary-800 w-auto", className)}
       {...props}
     />
   );
