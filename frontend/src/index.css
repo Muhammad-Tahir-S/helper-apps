@@ -209,6 +209,7 @@ body {
   --sidebar-border: var(--color-primary-300);
   --sidebar-ring: oklch(0.708 0 0);
   --icon-inner: var(--color-primary-main);
+  --custom-shadow: 0px 0px 16px 4px #0000000a;
 }
 
 .dark {
@@ -244,6 +245,7 @@ body {
   --sidebar-border: var(--color-primary-400);
   --sidebar-ring: oklch(0.556 0 0);
   --icon-inner: var(--color-primary-25);
+  --custom-shadow: 0px 0px 16px 4px #0000000a;
 }
 
 @layer base {

@@ -258,8 +258,8 @@ function SidebarTrigger({
   onClick,
   ...props
 }: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar, state } = useSidebar();
-
+  const { toggleSidebar, state, isMobile, openMobile } = useSidebar();
+  const isOpen = isMobile ? openMobile : state === "expanded";
   return (
     <Button
       data-sidebar="trigger"
@@ -273,7 +273,7 @@ function SidebarTrigger({
       }}
       {...props}
     >
-      {state === "expanded" ? (
+      {isOpen ? (
         <CollapseLight className="text-primary-200 dark:text-primary-pressed w-5 h-5" />
       ) : (
         <ExpandLight className="text-primary-200 dark:text-primary-pressed w-5 h-5" />

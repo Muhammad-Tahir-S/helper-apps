@@ -35,7 +35,8 @@ import User from "../../assets/icons/user.svg?react";
 import Users from "../../assets/icons/users.svg?react";
 
 export default function AppSidebar() {
-  const { state, isMobile } = useSidebar();
+  const { state, isMobile, openMobile } = useSidebar();
+  const isOpen = isMobile ? openMobile : state === "expanded";
   const user = {
     name: "MT Sanuth",
     email: "mtsanuth@xyz.com",
@@ -75,10 +76,10 @@ export default function AppSidebar() {
       <SidebarHeader
         className={cn(
           "text-[18px] font-bold ",
-          state === "expanded" ? "justify-between" : "justify-center",
+          isOpen ? "justify-between" : "justify-center",
         )}
       >
-        {state === "expanded" ? "App Logo" : ""}
+        {isOpen ? "App Logo" : ""}
         <SidebarTrigger />
       </SidebarHeader>
       <SidebarSeparator />
@@ -125,14 +126,14 @@ export default function AppSidebar() {
                       />
                     </AvatarFallback>
                   </Avatar>
-                  {state === "expanded" ? (
+                  {isOpen ? (
                     <div className="flex flex-col flex-1 text-left">
                       <Typography variant="text-md/semibold">
                         {user.name}
                       </Typography>
                       <Typography
                         variant="text-xs/medium"
-                        className="text-gray-500"
+                        className="text-gray-500 dark:text-gray-300"
                       >
                         {user.email}
                       </Typography>
@@ -157,7 +158,7 @@ export default function AppSidebar() {
                 const Icon = footerMenu.icon;
                 return (
                   <DropdownMenuItem key={footerMenu.title} className="group">
-                    <Icon className="group-hover:text-primary-hover" />
+                    <Icon className="stroke-gray-700 dark:stroke-gray-300 group-hover:stroke-primary-hover dark:group-hover:stroke-primary-main" />
                     <Typography
                       variant="text-sm/medium"
                       className="group-hover:text-primary-hover dark:group-hover:text-primary-main"
