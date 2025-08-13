@@ -146,10 +146,7 @@ export default function AppSidebar() {
               </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent
-              className={cn(
-                "py-4 px-2 gap-1",
-                isMobile ? "w-[224px]" : "w-[256px]",
-              )}
+              className={cn(isMobile ? "w-[224px]" : "w-[256px]")}
               side="bottom"
               align="end"
               sideOffset={9}
