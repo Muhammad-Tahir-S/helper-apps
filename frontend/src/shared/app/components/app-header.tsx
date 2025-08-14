@@ -58,7 +58,10 @@ export default function AppHeader() {
           {actions.map((action) => {
             const Icon = action.icon;
             return (
-              <div className="flex items-center w-10 h-10  justify-center shrink-0">
+              <div
+                className="flex items-center w-10 h-10  justify-center shrink-0"
+                key={action.label}
+              >
                 <Icon className="stroke-gray-500 dark:stroke-gray-300 group-hover:stroke-primary-hover dark:group-hover:stroke-primary-main " />
               </div>
             );
