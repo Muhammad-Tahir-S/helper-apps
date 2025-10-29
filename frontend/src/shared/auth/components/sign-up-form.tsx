@@ -25,7 +25,7 @@ const createAccountFormSchema = z.object({
   username: z.string().min(2).max(50),
   email: z.email(),
 });
-export default function CreateAccountForm() {
+export default function SignUpForm() {
   const form = useForm<z.infer<typeof createAccountFormSchema>>({
     resolver: zodResolver(createAccountFormSchema),
     defaultValues: {
