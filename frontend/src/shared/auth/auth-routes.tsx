@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router";
 
 import AuthLayout from "./components/auth-layout";
-import LoginForm from "./components/log-in-form";
-import SignUpForm from "./components/sign-up-form";
+import SigninPage from "./components/signin-page";
+import SignupPage from "./components/signup-page";
 
 export default function AuthRoutes() {
   return (
     <Routes>
       <Route element={<AuthLayout />}>
-        <Route path="signup" element={<SignUpForm />} />
-        <Route path="signin" element={<LoginForm />} />
+        <Route path="signup" element={<SignupPage />} />
+        <Route path="signin" element={<SigninPage />} />
       </Route>
     </Routes>
   );

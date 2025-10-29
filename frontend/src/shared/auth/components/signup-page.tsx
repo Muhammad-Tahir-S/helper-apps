@@ -1,7 +1,9 @@
+"use client";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
-import z from "zod";
+import { z } from "zod";
 
 import SocialButton from "@/shared/components/social-button";
 import Typography from "@/shared/components/typography";
@@ -17,22 +19,25 @@ import { Input } from "@/shared/components/ui/input";
 import { Separator } from "@/shared/components/ui/separator";
 
 import EmailIcon from "../../assets/icons/email.svg?react";
+import UserIcon from "../../assets/icons/user.svg?react";
 
-const loginFormSchema = z.object({
+const createAccountFormSchema = z.object({
+  username: z.string().min(2).max(50),
   email: z.email(),
 });
-
-export default function LoginForm() {
-  const form = useForm<z.infer<typeof loginFormSchema>>({
-    resolver: zodResolver(loginFormSchema),
+export default function SignupPage() {
+  const form = useForm<z.infer<typeof createAccountFormSchema>>({
+    resolver: zodResolver(createAccountFormSchema),
     defaultValues: {
+      username: "",
       email: "",
     },
     reValidateMode: "onChange",
   });
-  function onSubmit(values: z.infer<typeof loginFormSchema>) {
+  function onSubmit(values: z.infer<typeof createAccountFormSchema>) {
     return values;
   }
+
   return (
     <>
       <div className="flex flex-col items-center gap-3">
@@ -40,15 +45,15 @@ export default function LoginForm() {
           variant="display-md/semibold"
           className="dark:text-primary-25"
         >
-          Log In
+          Create Account
         </Typography>
         <div className="flex items-center">
           <Typography variant="text-md/regular" className="dark:text-gray-300">
-            Don’t have an account?
+            Already have an account?
           </Typography>
-          <Link to="/auth/signup" replace>
+          <Link to="/auth/signin" replace>
             <Button variant="pryLink" size="sm" className="p-1">
-              Create account
+              Log in
             </Button>
           </Link>
         </div>
@@ -59,6 +64,22 @@ export default function LoginForm() {
           className="flex flex-col w-full gap-8"
         >
           <div className="flex flex-col w-full gap-4">
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormControl>
+                    <Input
+                      placeholder="Your name"
+                      {...field}
+                      rightIcon={<UserIcon />}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name="email"
@@ -79,7 +100,7 @@ export default function LoginForm() {
               type="submit"
               disabled={form.formState.isSubmitted && !form.formState.isDirty}
             >
-              Log In
+              Create Account
             </Button>
           </div>
           <div className="flex items-center justify-between">
@@ -94,6 +115,22 @@ export default function LoginForm() {
           <SocialButton buttonText="Continue with Google" />
         </form>
       </Form>
+      <div className="flex text-center">
+        <Typography
+          variant="text-xs/medium"
+          className="dark:text-gray-400 text-gray-500"
+        >
+          By creating an account, you agree to our{" "}
+          <Link to="" className="dark:text-gray-100 text-base-dark">
+            Terms of Service
+          </Link>{" "}
+          and{" "}
+          <Link to="" className="dark:text-gray-100 text-base-dark">
+            Privacy & Cookie Statement
+          </Link>
+          .
+        </Typography>
+      </div>
     </>
   );
 }
