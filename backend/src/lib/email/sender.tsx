@@ -1,5 +1,4 @@
-import { render } from "@react-email/render";
-import VerificationEmail from "emails-workspace/emails/verification";
+import { VerificationEmail } from "emails";
 import { Resend } from "resend";
 
 import { logger } from "../logger";
@@ -20,18 +19,11 @@ export async function sendVerificationEmail({
   type,
 }: SendVerificationEmailProps) {
   try {
-    const emailHtml = render(
-      VerificationEmail({
-        verificationUrl: url,
-        type,
-      }),
-    );
-
     const result = await resend.emails.send({
       from: "noreply@yourdomain.com",
       to,
       subject,
-      html: await emailHtml,
+      react: <VerificationEmail verificationUrl={url} type={type} />,
     });
 
     logger.info(

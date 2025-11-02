@@ -20,38 +20,36 @@ function VerificationEmail(props: VerificationEmailProps) {
   const isReset = type === "reset-password";
 
   return (
-    <>
-      <Html>
-        <Head />
-        <Body style={main}>
-          <Container style={container}>
-            <Section style={section}>
-              <Img
-                src="https://yourdomain.com/logo.png"
-                width="40"
-                height="40"
-                alt="Logo"
-              />
-              <Text style={title}>
-                {isReset ? "Reset Your Password" : "Verify Your Email"}
-              </Text>
-              <Text style={text}>
-                {isReset
-                  ? "Click the button below to reset your password."
-                  : "Click the button below to verify your email address."}
-              </Text>
-              <Button style={button} href={verificationUrl}>
-                {isReset ? "Reset Password" : "Verify Email"}
-              </Button>
-              <Text style={footer}>
-                This link will expire in 24 hours. If you didn't request this,
-                please ignore this email.
-              </Text>
-            </Section>
-          </Container>
-        </Body>
-      </Html>
-    </>
+    <Html>
+      <Head />
+      <Body style={main}>
+        <Container style={container}>
+          <Section style={section}>
+            <Img
+              src="https://yourdomain.com/logo.png"
+              width="40"
+              height="40"
+              alt="Logo"
+            />
+            <Text style={title}>
+              {isReset ? "Reset Your Password" : "Verify Your Email"}
+            </Text>
+            <Text style={text}>
+              {isReset
+                ? "Click the button below to reset your password."
+                : "Click the button below to verify your email address."}
+            </Text>
+            <Button style={button} href={verificationUrl}>
+              {isReset ? "Reset Password" : "Verify Email"}
+            </Button>
+            <Text style={footer}>
+              This link will expire in 24 hours. If you didn't request this,
+              please ignore this email.
+            </Text>
+          </Section>
+        </Container>
+      </Body>
+    </Html>
   );
 }
 

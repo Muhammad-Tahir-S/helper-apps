@@ -8,9 +8,9 @@ import * as schema from "./schema";
 //   connect_timeout: 10,
 // });
 
-export const db = drizzle(
-  { connectionString: process.env.DATABASE_URL, ssl: true },
-  { schema },
-);
+export const db = drizzle({
+  connection: { connectionString: process.env.DATABASE_URL, ssl: true },
+  schema,
+});
 
 export type Database = typeof db;

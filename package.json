@@ -7,16 +7,12 @@
   "scripts": {
     "dev": "concurrently \"pnpm:dev:*\"",
     "dev:frontend": "pnpm --filter \"./frontend/**\" dev",
-    "dev:api": "pnpm --filter api-server dev",
-    "dev:party": "pnpm --filter partykit-server dev",
-    "build": "pnpm -r --filter \"!partykit-server\" build",
+    "dev:backend": "pnpm --filter backend dev",
+    "build": "pnpm --filter \"backend\" build && pnpm --filter \"frontend\" build",
     "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write .",
-    "typecheck": "pnpm -r --if-present typecheck",
-    "db:generate": "pnpm --filter db exec drizzle-kit generate:pg",
-    "db:migrate": "pnpm --filter db exec drizzle-kit migrate",
-    "db:studio": "pnpm --filter db exec drizzle-kit studio",
-    "prepare": "husky"
+    "prepare": "husky",
+    "typecheck": "pnpm --filter backend typecheck && pnpm --filter frontend typecheck"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

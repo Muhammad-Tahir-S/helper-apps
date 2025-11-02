@@ -1,11 +1,12 @@
 {
-  "name": "emails-workspace",
+  "name": "emails",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "email dev",
-    "build": "email build"
+    "dev": "email dev --dir ./templates --port 3001",
+    "build": "email build --dir ./templates --packageManager pnpm",
+    "typecheck": "tsc -b"
   },
   "devDependencies": {
     "@react-email/preview-server": "4.3.2",
