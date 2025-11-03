@@ -9,14 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        primary:
+          "bg-primary-main text-base-light hover:bg-primary-hover focus:bg-primary-pressed disabled:bg-primary-300 dark:disabled:bg-primary-900 dark:disabled:text-gray-500",
+        pryOutline:
+          "text-primary-main border-[2px] border-primary-main hover:border-primary-hover hover:bg-primary-50 hover:text-primary-hover focus:text-primary-pressed focus:bg-transparent focus:border-primary-pressed disabled:border-primary-300 disabled:text-primary-300",
+        grey: "text-gray-500 border-[2px] border-gray-300 hover:text-gray-600 hover:bg-gray-25 focus:text-gray-700 disabled:text-gray-300",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+          "bg-secondary-main text-base-light hover:bg-secondary-600 focus:bg-secondary-700 disabled:bg-secondary-300",
+        error:
+          "bg-error-main text-base-light hover:bg-error-hover focus:bg-error-pressed disabled:bg-error-300",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
@@ -26,6 +27,7 @@ const buttonVariants = cva(
       size: {
         default: "h-9 px-4 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        md: "h-12 px-6 [&_svg:not([class*='size-'])]:size-6 text-[16px] font-medium rounded-[12px] gap-2",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         sidebarItem:
           "h-12 justify-start w-full px-5 gap-2 rounded-[12px] [&_svg:not([class*='size-'])]:size-6",
@@ -33,8 +35,8 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
-      size: "default",
+      variant: "primary",
+      size: "md",
     },
   },
 );
