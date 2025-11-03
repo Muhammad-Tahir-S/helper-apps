@@ -7,19 +7,17 @@
   "scripts": {
     "dev": "concurrently \"pnpm:dev:*\"",
     "dev:frontend": "pnpm --filter \"./frontend/**\" dev",
-    "dev:api": "pnpm --filter api-server dev",
-    "dev:party": "pnpm --filter partykit-server dev",
-    "build": "pnpm -r --filter \"!partykit-server\" build",
+    "dev:backend": "pnpm --filter backend dev",
+    "build": "pnpm --filter \"backend\" build && pnpm --filter \"frontend\" build",
     "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write .",
-    "typecheck": "pnpm -r --if-present typecheck",
-    "db:generate": "pnpm --filter db exec drizzle-kit generate:pg",
-    "db:migrate": "pnpm --filter db exec drizzle-kit migrate",
-    "db:studio": "pnpm --filter db exec drizzle-kit studio",
-    "prepare": "husky"
+    "prepare": "husky",
+    "typecheck": "pnpm --filter backend typecheck && pnpm --filter frontend typecheck"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
+    "@types/node": "^20.11.17",
+    "@types/react": "^19.2.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "concurrently": "^8.2.2",
@@ -27,14 +25,18 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.7",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
     "prettier": "^3.3.2",
+    "tsx": "^4.7.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.36.0"
+    "typescript-eslint": "^8.36.0",
+    "zod": "^4.1.12"
   },
   "engines": {
     "node": ">=20.11.1",

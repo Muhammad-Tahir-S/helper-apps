@@ -52,7 +52,7 @@ export default function SignupPage() {
             Already have an account?
           </Typography>
           <Link to="/auth/signin" replace>
-            <Button variant="pryLink" size="sm" className="p-1">
+            <Button variant="link" size="sm" className="p-1">
               Log in
             </Button>
           </Link>

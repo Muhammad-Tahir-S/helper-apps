@@ -47,7 +47,7 @@ export default function SigninPage() {
             Don’t have an account?
           </Typography>
           <Link to="/auth/signup" replace>
-            <Button variant="pryLink" size="sm" className="p-1">
+            <Button variant="link" size="sm" className="p-1">
               Create account
             </Button>
           </Link>

@@ -5,7 +5,7 @@ import * as React from "react";
 import { cn } from "@/shared/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none [&_svg]:pointer-events-none  shrink-0 [&_svg]:shrink-0 outline-none aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive ",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-5 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
@@ -19,22 +19,19 @@ const buttonVariants = cva(
         error:
           "bg-error-main text-base-light hover:bg-error-hover focus:bg-error-pressed disabled:bg-error-300",
         ghost:
-          "text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:text-gray-700 focus:bg-transparent disabled:text-gray-300",
-        errorOutline:
-          "border-[2px] border-error-main text-error-main hover:bg-error-25 hover:text-error-hover hover:border-error-hover focus:text-error-pressed focus:border-error-pressed focus:bg-transparent disabled:border-error-300 disabled:text-error-300 ",
-
-        pryLink:
-          "text-primary-main hover:text-primary-hover focus:text-primary-pressed disabled:text-primary-300 ",
-        successLink:
-          "text-success-main hover:text-success-600 focus:text-success-700 disabled:text-success-300 ",
-        secLink:
-          "text-warning-main hover:text-warning-600 focus:text-warning-700 disabled:text-warning-300 ",
+          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        link: "text-primary underline-offset-4 hover:underline",
+        sidebarItem:
+          "hover:bg-primary-25 hover:text-primary-main  dark:hover:bg-primary-pressed dark:hover:text-primary-25 text-primary-main dark:text-primary-25 focus:bg-primary-hover focus:text-primary-25",
       },
       size: {
-        md: "h-12 py-3 px-6 [&_svg:not([class*='size-'])]:size-6 text-[16px] font-medium rounded-[12px] gap-2",
-        sm: "h-9 text-sm py-2 px-3 font-semibold [&_svg:not([class*='size-'])]:size-5 rounded-[6px] gap-2",
-        // lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9 rounded-[8px] [&_svg:not([class*='size-'])]:size-5",
+        default: "h-9 px-4 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        md: "h-12 px-6 [&_svg:not([class*='size-'])]:size-6 text-[16px] font-medium rounded-[12px] gap-2",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        sidebarItem:
+          "h-12 justify-start w-full px-5 gap-2 rounded-[12px] [&_svg:not([class*='size-'])]:size-6",
+        icon: "size-9",
       },
     },
     defaultVariants: {
