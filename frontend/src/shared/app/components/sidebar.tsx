@@ -24,7 +24,7 @@ import Logout from "../../assets/icons/logout.svg?react";
 // import Settings from "../../assets/icons/setting.svg?react";
 import SideMenuIcon from "../../assets/icons/side-menu-icon.svg?react";
 import User from "../../assets/icons/user.svg?react";
-import Users from "../../assets/icons/users.svg?react";
+// import Users from "../../assets/icons/users.svg?react";
 
 const user = {
   name: "MT Sanuth",
@@ -47,10 +47,10 @@ const sideBarFooterMenu = [
     title: "View profile",
     icon: User,
   },
-  {
-    title: "Invite members",
-    icon: Users,
-  },
+  // {
+  //   title: "Invite members",
+  //   icon: Users,
+  // },
   // {
   //   title: "Settings",
   //   icon: Settings,
