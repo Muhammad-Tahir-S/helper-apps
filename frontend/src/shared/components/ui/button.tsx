@@ -20,11 +20,15 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
+        sidebarItem:
+          "hover:bg-primary-25 hover:text-primary-main  dark:hover:bg-primary-pressed dark:hover:text-primary-25 text-primary-main dark:text-primary-25 focus:bg-primary-hover focus:text-primary-25",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        default: "h-9 px-4 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        sidebarItem:
+          "h-12 justify-start w-full px-5 gap-2 rounded-[12px] [&_svg:not([class*='size-'])]:size-6",
         icon: "size-9",
       },
     },
