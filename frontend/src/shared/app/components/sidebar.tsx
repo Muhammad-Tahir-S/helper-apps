@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
 
@@ -24,7 +24,7 @@ import Logout from "../../assets/icons/logout.svg?react";
 // import Settings from "../../assets/icons/setting.svg?react";
 import SideMenuIcon from "../../assets/icons/side-menu-icon.svg?react";
 import User from "../../assets/icons/user.svg?react";
-// import Users from "../../assets/icons/users.svg?react";
+import Users from "../../assets/icons/users.svg?react";
 
 const user = {
   name: "MT Sanuth",
@@ -47,10 +47,10 @@ const sideBarFooterMenu = [
     title: "View profile",
     icon: User,
   },
-  // {
-  //   title: "Invite members",
-  //   icon: Users,
-  // },
+  {
+    title: "Invite members",
+    icon: Users,
+  },
   // {
   //   title: "Settings",
   //   icon: Settings,
@@ -70,15 +70,13 @@ export default function Sidebar({
     React.SetStateAction<"expanded" | "collapsed">
   >;
 }) {
-  const [openProfile, setOpenProfile] = useState(false);
+  const [isProfileOpen, setProfileOpen] = useState(false);
 
   return (
     <div
       className={cn(
         "flex flex-col transition-all ease-in-out duration-300 rounded-r-[12px] md:rounded-[12px] bg-primary-50 dark:bg-primary-900",
-        isSideBarOpen === "expanded"
-          ? "md:w-[280px] w-full"
-          : "md:w-[96px] w-0",
+        isSideBarOpen === "expanded" ? "md:w-[280px] w-full" : "md:w-24 w-0",
       )}
     >
       <div
@@ -160,7 +158,7 @@ export default function Sidebar({
         })}
       </div>
       <div className="flex py-6 px-5">
-        <DropdownMenu open={openProfile} onOpenChange={setOpenProfile}>
+        <DropdownMenu open={isProfileOpen} onOpenChange={setProfileOpen}>
           <DropdownMenuTrigger asChild>
             <div
               className={cn(
@@ -196,16 +194,18 @@ export default function Sidebar({
                   </Typography>
                 </div>
               </div>
-              {openProfile ? (
-                <ChevronUp className="size-4.5 text-gray-500 shrink-0 transition-transform duration-200" />
-              ) : (
-                <ChevronDown className="size-4.5 text-gray-500 shrink-0 transition-transform duration-200" />
-              )}
+
+              <ChevronDown
+                className={cn(
+                  "size-4.5 text-gray-500 shrink-0 transition-transform duration-200",
+                  isProfileOpen ? "rotate-180" : "rotate-0",
+                )}
+              />
             </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent
             className={cn(
-              "w-[224px] md:w-[256px]",
+              "w-56 md:w-[256px]",
               isSideBarOpen === "collapsed" ? "mx-5" : "",
             )}
             side="bottom"
